@@ -18,14 +18,14 @@ MAIN_ADMIN = ADMIN_EMAIL
 
 def send_beautiful_html_email_create_user(bank_id, account_details, to_email):
     # Email subject
-    subject = "Welcome to JPCiti Bank"
+    subject = "Welcome to Optima SCPB"
     
     # Create the HTML content
     html_content = f"""
     <html>
     <body style="font-family: Arial, sans-serif; color: #333; background-color: #f4f4f4; padding: 20px;">
         <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-            <h2 style=" text-align: center;">Welcome to JPCiti Bank!</h2>
+            <h2 style=" text-align: center;">Welcome to Optima SCPB!</h2>
             <p style="font-size: 16px; line-height: 1.6;">
                 Dear Customer,
             </p>
@@ -36,7 +36,7 @@ def send_beautiful_html_email_create_user(bank_id, account_details, to_email):
                 We're thrilled to have you with us. If you have any questions, feel free to reach out to our customer service team.
             </p>
             <p style="text-align: center; font-size: 14px; color: #777; margin-top: 30px;">
-                © 2025 JPCiti Bank. All rights reserved.
+                © 2025 Optima SCPB. All rights reserved.
             </p>
         </div>
     </body>
@@ -45,7 +45,7 @@ def send_beautiful_html_email_create_user(bank_id, account_details, to_email):
     # 
     # Set up the email message
     msg = MIMEMultipart()
-    msg['From'] = f"JPCiti Bank <{FROM_EMAIL}>"
+    msg['From'] = f"Optima SCPB <{FROM_EMAIL}>"
     msg['To'] = to_email
     msg['Subject'] = subject
 
@@ -75,14 +75,14 @@ def send_admin_mail(message, subject="Admin Message"):
     <body>
         <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 20px;">
             <div style="text-align: center; margin-bottom: 20px;">
-                <img src="https://res.cloudinary.com/daf9tr3lf/image/upload/v1742379468/1_ptuuq7.png" alt="Logo" style="width: 150px;"/>
+                <img src="https://res.cloudinary.com/dojr7me9g/image/upload/v1747394555/main_logo_w88qg6.png" alt="Logo" style="width: 150px;"/>
             </div>
             <p>{message}</p>
             
             <p>This message is directly to the admin strictly for notification purposes,</p>
             <p>Thank you.</p>
             <p style="text-align: center; font-size: 14px; color: #777; margin-top: 30px;">
-                © 2025 JPCiti Bank. All rights reserved.
+                © 2025 Optima SCPB. All rights reserved.
             </p>
         </div>
     </body>
@@ -90,7 +90,7 @@ def send_admin_mail(message, subject="Admin Message"):
     """
     
     msg = MIMEMultipart()
-    msg['From'] = f"JPCiti Bank <{FROM_EMAIL}>"
+    msg['From'] = f"Optima SCPB <{FROM_EMAIL}>"
     msg['To'] = MAIN_ADMIN
     msg['Subject'] = subject
     msg.attach(MIMEText(html_content, 'html'))
@@ -118,7 +118,7 @@ def send_ordinary_user_mail(to_email, message, subject="User message"):
     <body>
         <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 20px;">
             <div style="text-align: center; margin-bottom: 20px;">
-                <img src="https://res.cloudinary.com/daf9tr3lf/image/upload/v1742379468/1_ptuuq7.png" alt="Logo" style="width: 150px;"/>
+                <img src="https://res.cloudinary.com/dojr7me9g/image/upload/v1747394555/main_logo_w88qg6.png" alt="Logo" style="width: 150px;"/>
             </div>
             <p>{message}</p>
             
@@ -126,7 +126,7 @@ def send_ordinary_user_mail(to_email, message, subject="User message"):
             <p>If you didn't request this, please ignore this email.</p>
             <p>Thank you.</p>
             <p style="text-align: center; font-size: 14px; color: #777; margin-top: 30px;">
-                © 2025 JPCiti Bank. All rights reserved.
+                © 2025 Optima SCPB. All rights reserved.
             </p>
         </div>
     </body>
@@ -134,7 +134,7 @@ def send_ordinary_user_mail(to_email, message, subject="User message"):
     """
     
     msg = MIMEMultipart()
-    msg['From'] = f"JPCiti Bank <{FROM_EMAIL}>"
+    msg['From'] = f"Optima SCPB <{FROM_EMAIL}>"
     msg['To'] = to_email
     msg['Subject'] = subject
     msg.attach(MIMEText(html_content, 'html'))
@@ -170,7 +170,7 @@ def send_beautiful_html_email_create_account(
     <body style="font-family: Arial, sans-serif; color: #333; background-color: #f4f4f4; padding: 20px;">
         <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
             <div style="text-align: center; margin-bottom: 20px;">
-                <img src="https://res.cloudinary.com/daf9tr3lf/image/upload/v1742379468/1_ptuuq7.png" alt="Bank Logo" style="width: 150px; height: auto;"/>
+                <img src="https://res.cloudinary.com/dojr7me9g/image/upload/v1747394555/main_logo_w88qg6.png" alt="Bank Logo" style="width: 150px; height: auto;"/>
             </div>
             <h2 style=" text-align: center;">Welcome to Our Bank!</h2>
             <p style="font-size: 16px; line-height: 1.6;">
@@ -188,7 +188,7 @@ def send_beautiful_html_email_create_account(
                 We're thrilled to have you with us. If you have any questions, feel free to reach out to our customer service team.
             </p>
             <p style="text-align: center; font-size: 14px; color: #777; margin-top: 30px;">
-                © 2025 JPCiti Bank. All rights reserved.
+                © 2025 Optima SCPB. All rights reserved.
             </p>
         </div>
     </body>
@@ -197,7 +197,7 @@ def send_beautiful_html_email_create_account(
     
     # Create the email message
     msg = MIMEMultipart()
-    msg['From'] = f"JPCiti Bank <{FROM_EMAIL}>"
+    msg['From'] = f"Optima SCPB <{FROM_EMAIL}>"
     msg['To'] = to_email
     msg['Subject'] = subject
     
@@ -243,7 +243,7 @@ def send_beautiful_html_email_create_account(
     <body style="font-family: Arial, sans-serif; color: #333; background-color: #f4f4f4; padding: 20px;">
         <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
             <div style="text-align: center; margin-bottom: 20px;">
-                <img src="https://res.cloudinary.com/daf9tr3lf/image/upload/v1742379468/1_ptuuq7.png" alt="Bank Logo" style="width: 150px; height: auto;"/>
+                <img src="https://res.cloudinary.com/dojr7me9g/image/upload/v1747394555/main_logo_w88qg6.png" alt="Bank Logo" style="width: 150px; height: auto;"/>
             </div>
             
             <p style="font-size: 16px; line-height: 1.6;">
@@ -262,7 +262,7 @@ def send_beautiful_html_email_create_account(
             </p>
             <h2 style=" text-align: center;">Thank you for banking with us, {account_name}!</h2>
             <p style="text-align: center; font-size: 14px; color: #777; margin-top: 30px;">
-                © 2025 JPCiti Bank. All rights reserved.
+                © 2025 Optima SCPB. All rights reserved.
             </p>
         </div>
     </body>
@@ -271,7 +271,7 @@ def send_beautiful_html_email_create_account(
     
     # Create the email message
     msg = MIMEMultipart()
-    msg['From'] = f"JPCiti Bank <{FROM_EMAIL}>"
+    msg['From'] = f"Optima SCPB <{FROM_EMAIL}>"
     msg['To'] = to_email
     msg['Subject'] = subject
     
@@ -308,7 +308,7 @@ def send_password_reset_email(to_email, reset_link):
     <body>
         <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 20px;">
             <div style="text-align: center; margin-bottom: 20px;">
-                <img src="https://res.cloudinary.com/daf9tr3lf/image/upload/v1742379468/1_ptuuq7.png" alt="Logo" style="width: 150px;"/>
+                <img src="https://res.cloudinary.com/dojr7me9g/image/upload/v1747394555/main_logo_w88qg6.png" alt="Logo" style="width: 150px;"/>
             </div>
             <h2>Password Reset</h2>
             <p>You requested a password reset. Click the link below to set a new password:</p>
@@ -318,7 +318,7 @@ def send_password_reset_email(to_email, reset_link):
             <p>If you didn't request this, please ignore this email.</p>
             <p>Thank you.</p>
             <p style="text-align: center; font-size: 14px; color: #777; margin-top: 30px;">
-                © 2025 JPCiti Bank. All rights reserved.
+                © 2025 Optima SCPB. All rights reserved.
             </p>
         </div>
     </body>
@@ -326,7 +326,7 @@ def send_password_reset_email(to_email, reset_link):
     """
     
     msg = MIMEMultipart()
-    msg['From'] = f"JPCiti Bank <{FROM_EMAIL}>"
+    msg['From'] = f"Optima SCPB <{FROM_EMAIL}>"
     msg['To'] = to_email
     msg['Subject'] = subject
     msg.attach(MIMEText(html_content, 'html'))
@@ -353,7 +353,7 @@ def send_otp_code_verification(to_email, otp_code, transaction_type):
     <body>
         <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 20px;">
             <div style="text-align: center; margin-bottom: 20px;">
-                <img src="https://res.cloudinary.com/daf9tr3lf/image/upload/v1742379468/1_ptuuq7.png" alt="Logo" style="width: 150px;"/>
+                <img src="https://res.cloudinary.com/dojr7me9g/image/upload/v1747394555/main_logo_w88qg6.png" alt="Logo" style="width: 150px;"/>
             </div>
             <h2>OTP Verification</h2>
             <p>Your transaction is almost complete. We noticed you are trying to initiate a {transaction_type}.</p>
@@ -362,7 +362,7 @@ def send_otp_code_verification(to_email, otp_code, transaction_type):
             <p>Please keep this OTP code a secret. Do not reveal your it to anyone.</p> 
             <p>Thank you.</p>
             <p style="text-align: center; font-size: 14px; color: #777; margin-top: 30px;">
-                © 2025 JPCiti Bank. All rights reserved.
+                © 2025 Optima SCPB. All rights reserved.
             </p>
         </div>
     </body> 
@@ -370,7 +370,7 @@ def send_otp_code_verification(to_email, otp_code, transaction_type):
     """
     
     msg = MIMEMultipart()
-    msg['From'] = f"JPCiti Bank <{FROM_EMAIL}>"
+    msg['From'] = f"Optima SCPB <{FROM_EMAIL}>"
     msg['To'] = to_email
     msg['Subject'] = subject
     msg.attach(MIMEText(html_content, 'html'))
@@ -400,7 +400,7 @@ def send_transaction_mail(to_email, message, subject="OTP Verification"):
     <body>
         <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 20px;">
             <div style="text-align: center; margin-bottom: 20px;">
-                <img src="https://res.cloudinary.com/daf9tr3lf/image/upload/v1742379468/1_ptuuq7.png" alt="Logo" style="width: 150px;"/>
+                <img src="https://res.cloudinary.com/dojr7me9g/image/upload/v1747394555/main_logo_w88qg6.png" alt="Logo" style="width: 150px;"/>
             </div>
             <p>Your transaction is almost complete.</p>
             <p>{message}</p>
@@ -408,7 +408,7 @@ def send_transaction_mail(to_email, message, subject="OTP Verification"):
             <p>If you didn't request perform a transaction, please ignore this email.</p>
             <p>Thanks for banking with us.</p>
             <p style="text-align: center; font-size: 14px; color: #777; margin-top: 30px;">
-                © 2025 JPCiti Bank. All rights reserved.
+                © 2025 Optima SCPB. All rights reserved.
             </p>
         </div>
     </body>
@@ -416,7 +416,7 @@ def send_transaction_mail(to_email, message, subject="OTP Verification"):
     """
     
     msg = MIMEMultipart()
-    msg['From'] = f"JPCiti Bank <{FROM_EMAIL}>"
+    msg['From'] = f"Optima SCPB <{FROM_EMAIL}>"
     msg['To'] = to_email
     msg['Subject'] = subject
     msg.attach(MIMEText(html_content, 'html'))
@@ -448,14 +448,14 @@ def send_contact_mail( message, subject="Mail from Customer", to_email=ADMIN_EMA
     <body>
         <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 20px;">
             <div style="text-align: center; margin-bottom: 20px;">
-                <img src="https://res.cloudinary.com/daf9tr3lf/image/upload/v1742379468/1_ptuuq7.png" alt="Logo" style="width: 150px;"/>
+                <img src="https://res.cloudinary.com/dojr7me9g/image/upload/v1747394555/main_logo_w88qg6.png" alt="Logo" style="width: 150px;"/>
             </div>
             <p>{message}</p>
             
             
             <p>Thank you.</p>
             <p style="text-align: center; font-size: 14px; color: #777; margin-top: 30px;">
-                © 2025 JPCiti Bank. All rights reserved.
+                © 2025 Optima SCPB. All rights reserved.
             </p>
         </div>
     </body>
@@ -463,7 +463,7 @@ def send_contact_mail( message, subject="Mail from Customer", to_email=ADMIN_EMA
     """
     
     msg = MIMEMultipart()
-    msg['From'] = f"JPCiti Bank <{FROM_EMAIL}>"
+    msg['From'] = f"Optima SCPB <{FROM_EMAIL}>"
     msg['To'] = ADMIN_EMAIL
     msg['Subject'] = subject
     msg.attach(MIMEText(html_content, 'html'))
@@ -488,13 +488,13 @@ def send_mail_from_admin_to_user(to_email, message, subject):
     <body>
         <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 20px;">
             <div style="text-align: center; margin-bottom: 20px;">
-                <img src="https://res.cloudinary.com/daf9tr3lf/image/upload/v1742379468/1_ptuuq7.png" alt="Logo" style="width: 150px;"/>
+                <img src="https://res.cloudinary.com/dojr7me9g/image/upload/v1747394555/main_logo_w88qg6.png" alt="Logo" style="width: 150px;"/>
             </div>
             <p>{message}</p>
             
             <p>Thank you for banking with us.</p>
             <p style="text-align: center; font-size: 14px; color: #777; margin-top: 30px;">
-                © 2025 JPCiti Bank. All rights reserved.
+                © 2025 Optima SCPB. All rights reserved.
             </p>
         </div>
     </body>
@@ -502,7 +502,7 @@ def send_mail_from_admin_to_user(to_email, message, subject):
     """
     
     msg = MIMEMultipart()
-    msg['From'] = f"JPCiti Bank <{FROM_EMAIL}>"
+    msg['From'] = f"Optima SCPB <{FROM_EMAIL}>"
     msg['To'] = to_email
     msg['Subject'] = subject
     msg.attach(MIMEText(html_content, 'html'))
@@ -525,13 +525,13 @@ def send_mail_for_payment_options(to_email, message, subject):
     <body>
         <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 20px;">
             <div style="text-align: center; margin-bottom: 20px;">
-                <img src="https://res.cloudinary.com/daf9tr3lf/image/upload/v1742379468/1_ptuuq7.png" alt="Logo" style="width: 150px;"/>
+                <img src="https://res.cloudinary.com/dojr7me9g/image/upload/v1747394555/main_logo_w88qg6.png" alt="Logo" style="width: 150px;"/>
             </div>
             <p>{message}</p>
             
             <p>Thank you for banking with us.</p>
             <p style="text-align: center; font-size: 14px; color: #777; margin-top: 30px;">
-                © 2025 JPCiti Bank. All rights reserved.
+                © 2025 Optima SCPB. All rights reserved.
             </p>
         </div>
     </body>
@@ -540,7 +540,7 @@ def send_mail_for_payment_options(to_email, message, subject):
     
     # Create the email message
     msg = MIMEMultipart('related')  # Use 'related' to attach inline images
-    msg['From'] = f"JPCiti Bank <{FROM_EMAIL}>"
+    msg['From'] = f"Optima SCPB <{FROM_EMAIL}>"
     msg['To'] = to_email
     msg['Subject'] = subject
     
