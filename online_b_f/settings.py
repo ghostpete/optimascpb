@@ -159,40 +159,26 @@ WSGI_APPLICATION = 'online_b_f.wsgi.application'
 #     }
 # }
 
-
-
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         default="postgres://neondb_owner:npg_L9Ivzrq3ikOA@ep-sweet-cake-abu7uisp-pooler.eu-west-2.aws.neon.tech/neondb?sslmode=require"
-#     )
-# }
-
-# DATABASE_HOST="ep-sweet-cake-abu7uisp-pooler.eu-west-2.aws.neon.tech"
-# DATABASE_USER="neondb_owner"
-# DATABASE_PORT="5432"
-# DATABASE_NAME="neondb"
-# DATABASE_ENGINE="django.db.backends.postgresql"
-# DATABASE_PASSWORD="npg_L9Ivzrq3ikOA"
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'neondb',
-        'USER': 'neondb_owner',
-        'PASSWORD': 'npg_L9Ivzrq3ikOA',
-        'HOST': 'ep-sweet-cake-abu7uisp-pooler.eu-west-2.aws.neon.tech',
-        'PORT': '5432',
-        'OPTIONS': {
-            'sslmode': 'require',
-        },
-    }
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
 }
 
 # DATABASES = {
-#     'default': dj_database_url.config(
-#         default="postgresql://neondb_owner:npg_szgUSl42bhko@ep-wispy-shape-a5j1d2yb-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require"
-#     )
+#     'default': {
+#         'ENGINE': config('DATABASE_ENGINE'),
+#         'NAME': config('DATABASE_NAME'),
+#         'USER': config('DATABASE_USER'),
+#         'PASSWORD': config('DATABASE_PASSWORD'),
+#         'HOST': config('DATABASE_HOST'),
+#         'PORT': config('DATABASE_PORT'),
+#         'OPTIONS': {
+#             'sslmode': 'require',
+#         },
+#     }
 # }
+
 
 
 # Password validation
