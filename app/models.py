@@ -125,7 +125,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     
 
     # GOVERNMENT ID 
-    government_id_type = models.CharField(max_length=200, blank=True, null=True, default=PREFERRED_ID_TYPE)
+    government_id_type = models.CharField(max_length=200, blank=True, null=True, choices=PREFERRED_ID_TYPE, default="Driver Licence")
     government_id_number = models.CharField(max_length=200, blank=True, null=True)
     front_id_image = CloudinaryField(resource_type='raw', blank=True, null=True)
     back_id_image = CloudinaryField(resource_type='raw', blank=True, null=True)

@@ -25,7 +25,7 @@ def send_beautiful_html_email_create_user(bank_id, account_details, to_email):
     <html>
     <body style="font-family: Arial, sans-serif; color: #333; background-color: #f4f4f4; padding: 20px;">
         <div style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-            <h2 style=" text-align: center;">Welcome to Optima SCPB!</h2>
+            <h2 style=" text-align: center;">Welcome to Optima SCPB</h2>
             <p style="font-size: 16px; line-height: 1.6;">
                 Dear Customer,
             </p>
