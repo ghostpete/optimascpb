@@ -52,30 +52,6 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': config('CLOUDINARY_API_SECRET')
 }
 
-# APPEND_SLASH = False
-
-# LOGING FILE
-
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#     'handlers': {
-#         'file': {
-#             'level': 'DEBUG',
-#             'class': 'logging.FileHandler',
-#             'filename': os.path.join(BASE_DIR, 'debug.log'),
-#         },
-#     },
-#     'loggers': {
-#         'django': {
-#             'handlers': ['file'],
-#             'level': 'DEBUG',
-#             'propagate': True,
-#         },
-#     },
-# }
-
-
 
 # Application definition
 
@@ -124,7 +100,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'online_b_f.urls'
 
-# CRISPY_TEMPLATE_PACK = 'uni_form'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 
@@ -152,32 +127,12 @@ WSGI_APPLICATION = 'online_b_f.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': dj_database_url.config(
         default=config('DATABASE_URL')
     )
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': config('DATABASE_ENGINE'),
-#         'NAME': config('DATABASE_NAME'),
-#         'USER': config('DATABASE_USER'),
-#         'PASSWORD': config('DATABASE_PASSWORD'),
-#         'HOST': config('DATABASE_HOST'),
-#         'PORT': config('DATABASE_PORT'),
-#         'OPTIONS': {
-#             'sslmode': 'require',
-#         },
-#     }
-# }
 
 
 
@@ -203,7 +158,6 @@ ADMIN_EMAIL = config('ADMIN_EMAIL')
 FROM_EMAIL=config('FROM_EMAIL')
 EMAIL_PASSWORD=config('EMAIL_PASSWORD')
 EMAIL_SMTP_SERVER=config('EMAIL_SMTP_SERVER')
-# EMAIL_SMTP_PORT= config('EMAIL_SMTP_PORT', cast=int)
 
 
 
