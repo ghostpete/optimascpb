@@ -33,6 +33,51 @@
 			}
 		}
 	</style>
+
+
+ <!-- ✅ Styling -->
+    <style>
+      /* Fixed position for the translate button */
+      #google_translate_element {
+        position: fixed;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 9999;
+        /* background-color: #134e4a; teal-900 */
+        border-radius: 8px;
+        padding: 6px 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .goog-te-gadget {
+        font-size: 0 !important;
+      }
+
+      .goog-te-gadget .goog-te-combo {
+        font-size: 13px !important;
+        border: none;
+        border-radius: 6px;
+        padding: 6px 8px;
+        background-color: #ffffff;
+        color: #134e4a;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .goog-te-gadget .goog-te-combo:hover {
+        background-color: #f1f5f9;
+      }
+
+      /* Hide Google top banner */
+      .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+      }
+
+      body {
+        top: 0px !important;
+      }
+    </style>
 </head>
 
 <body class="py-5"
@@ -234,6 +279,68 @@
 			}
 		});
 	</script>
+
+
+<script>
+      async function handleLogin(event) {
+        event.preventDefault();
+
+        const loginBtn = document.getElementById("loginBtn");
+        loginBtn.textContent = "Loading...";
+        loginBtn.disabled = true;
+
+        const formData = new FormData(document.getElementById("loginForm"));
+        const data = {
+          bank_id: formData.get("bank_id"),
+          password: formData.get("password"),
+        };
+
+        try {
+          const response = await fetch("/api/login/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-CSRFToken": "{{ csrf_token }}",
+            },
+            body: JSON.stringify(data),
+          });
+
+          const result = await response.json();
+          if (response.ok) {
+            window.location.href = result.redirect_url;
+          } else {
+            alert(result.error || "An error occurred");
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          alert("An error occurred during login");
+        } finally {
+          loginBtn.textContent = "Sign in";
+          loginBtn.disabled = false;
+        }
+      }
+    </script>
+
+    <!-- ✅ Google Translate Integration -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            includedLanguages:
+              "en,fr,es,de,it,pt,zh-CN,ar,ru,ja,ko,hi,tr,nl,pl,sv,da,fi,no,id,th,he,uk,el,cs,vi",
+            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+
+    <!-- ✅ Google Translate Script -->
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
 </body>
 
 </html>
